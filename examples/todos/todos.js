@@ -1,3 +1,11 @@
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+var FluxBackbone = require('../../lib/FluxBackbone');
+var AppDispatcher = require('./dispatcher/AppDispatcher');
+var TodoActions = require('./action/TodoActions');
+var Constants = require('./constants/TodoConstants');
+
 // An example Backbone application contributed by
 // [Jérôme Gravel-Niquet](http://jgn.me/). This demo uses a simple
 // [LocalStorage adapter](backbone.localstorage.html)
@@ -6,88 +14,13 @@
 // Load the application once the DOM is ready, using `jQuery.ready`:
 $(function(){
 
-
-  var Constants = _.extend( {}, flux.Constants, {
-    todo: {
-      GET_TODOS: "TODO_DATA",
-      CREATE_TODO: "TODO_CREATE",
-      SAVE_TODO: "TODO_SAVE",
-      REMOVE_TODO: "TODO_REMOVE"
-    }
-  });
-
-      // Dispatcher
-  var AppDispatcher = new flux.Dispatcher();
-
-      // WebApi
-  var WebApiDef = function(){};
-
-    _.extend(WebApiDef.prototype, flux.WebApiMixin, {
-
-        // Save all of the todo items under the `"todos-backbone"` namespace.
-        localStorage: new Backbone.LocalStorage("todos-backbone"),
-
-        dispatch: function(payload) {
-            AppDispatcher.dispatch(payload);
-        },
-
-        getTodos: function(options) {
-            return this.doRequest('read', _.extend({
-                key: Constants.todo.GET_TODOS
-            }, options));
-        },
-
-        createTodo: function(todo) {
-            this.doRequest('create', {
-                key: Constants.todo.CREATE_TODO,
-                data: todo
-            });
-        },
-
-        saveTodo: function(todo) {
-            this.doRequest('update', {
-                key: Constants.todo.SAVE_TODO,
-                data: todo
-            });
-        },
-
-        removeTodo: function(todo) {
-            this.doRequest('delete', {
-                key: Constants.todo.REMOVE_TODO,
-                data: todo
-            });
-        } 
-
-    });
-
-  var WebApi = new WebApiDef();
-
-  // Actions
-  var TodoActions = {
-
-        getTodos: function(options) {
-            WebApi.getTodos(options);
-        },
-
-        createTodo: function(todo) {
-          WebApi.createTodo(todo);
-        },
-
-        saveTodo: function(todo) {
-          WebApi.saveTodo(todo);
-        },
-
-        removeTodo: function(todo) {
-          WebApi.removeTodo(todo);
-        }
-  };
-
+  "use strict";
 
   // Todo Model
   // ----------
 
   // Our basic **Todo** model has `title`, `order`, and `done` attributes.
-  var Todo = flux.FluxModel.extend({
+  var Todo = FluxBackbone.Model.extend({
 
     // Default attributes for the todo item.
     defaults: function() {
@@ -113,7 +46,7 @@ $(function(){
 
   // The collection of todos is backed by *localStorage* instead of a remote
   // server.
-  var TodoList = flux.FluxCollection.extend({
+  var TodoList = FluxBackbone.Collection.extend({
 
     // Reference to this collection's model.
     model: Todo,

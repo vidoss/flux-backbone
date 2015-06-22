@@ -1,0 +1,36 @@
+{
+  "name": "flux-backbone-todo",
+  "version": "0.0.1",
+  "description": "Example todo app using FluxBackbone Models and Collections",
+  "main": "todos.js",
+  "scripts": {
+    "start": "watchify todos.js -o bundle.js",
+    "build": "browserify todos.js -o bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/vidoss/flux-backbone"
+  },
+  "keywords": [
+    "flux",
+    "backbone",
+    "todo"
+  ],
+  "author": "Victor Doss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vidoss/flux-backbone/issues"
+  },
+  "homepage": "https://github.com/vidoss/flux-backbone",
+  "dependencies": {
+    "backbone": "^1.2.1",
+    "flux": "^2.0.3",
+    "jquery": "^2.1.4",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "watchify": "^3.2.2"
+  }
+}

@@ -6,7 +6,7 @@
 
     var _ = require('underscore');
     var Backbone = require('backbone');
-    var Constants = require('./Constants');
+    var Constants = require('../constants/Constants');
 
     var WebApiMixin = _.extend({}, Backbone.Events, {
 
@@ -47,7 +47,7 @@
         },
 
         callSync: function(method, options) {
-            return Backbone.LocalStorage.sync.call(this, method, this, options);
+            return Backbone.sync.call(this, method, this, options);
         }
 
     });
