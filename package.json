@@ -1,0 +1,44 @@
+{
+  "name": "flux-backbone",
+  "version": "0.0.1",
+  "description": "Thin wrapper around Backbone Model and Collections to use in Flux pattern.",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "gulp publish",
+    "test": "jest"
+  },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "./node_modules/backbone"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vidoss/flux-backbone"
+  },
+  "keywords": [
+    "flux",
+    "backbone",
+    "immutable"
+  ],
+  "author": "Victor Doss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vidoss/flux-backbone/issues"
+  },
+  "homepage": "https://github.com/vidoss/flux-backbone",
+  "dependencies": {
+    "backbone": "^1.2.1",
+    "jquery": "^2.1.4",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "jest-cli": "^0.4.13",
+    "run-sequence": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
