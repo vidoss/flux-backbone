@@ -4,11 +4,13 @@
 
     "use strict";
 
-    module.exports = {
+    var Constants = {
 
         request: {
             ERROR: "REQUEST.ERROR",
             PENDING: "REQUEST.PENDING"
         }
     };
+
+     module.exports = Constants;
 
