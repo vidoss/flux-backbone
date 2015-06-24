@@ -1,6 +1,6 @@
 {
   "name": "flux-backbone",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Thin wrapper around Backbone Model and Collections to use in Flux pattern.",
   "main": "index.js",
   "scripts": {

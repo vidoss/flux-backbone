@@ -6,7 +6,13 @@ Please read the blog post on FluxBackbone: ["Building Backbone apps using Flux"]
 
 
 ## Installing FluxBackbone
-Flux is available as a [npm module](https://www.npmjs.org/package/flux-backbone), so you can add it to your package.json file or run `npm install flux-backbone`.  Usage:
+Flux is available as a [npm module](https://www.npmjs.org/package/flux-backbone), so you can add it to your package.json file or run 
+
+```
+npm install flux-backbone
+```  
+
+Usage:
 
 ```javascript
 var FluxBackbone = require('flux-backbone');
@@ -16,7 +22,11 @@ var TodoList = FluxBackbone.Collection.extend({
 ```
 
 ## Building FluxBackbone from a Cloned Repo
-Clone the repo and navigate into the resulting `flux-backbone` directory.  Then run `npm install`.
+Clone the repo and navigate into the resulting `flux-backbone` directory.  Then run 
+
+```
+npm install
+```
 
 This will run [Gulp](http://gulpjs.com/)-based build tasks automatically and produce the file FluxBackbone.js, which you can then require as a module. 
 
