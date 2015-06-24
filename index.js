@@ -1,4 +1,4 @@
 
 "use strict";
 
-module.exports.FluxBackbone = require('./lib/FluxBackbone');
+module.exports = require('./lib/FluxBackbone');
