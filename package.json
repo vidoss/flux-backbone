@@ -1,6 +1,6 @@
 {
   "name": "flux-backbone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Thin wrapper around Backbone Model and Collections to use in Flux pattern.",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,8 @@
   },
   "files": [
     "index.js",
-    "lib/"
+    "lib/",
+    "dist/"
   ],
   "repository": {
     "type": "git",
