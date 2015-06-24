@@ -1,6 +1,6 @@
 {
   "name": "flux-backbone",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Thin wrapper around Backbone Model and Collections to use in Flux pattern.",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,10 @@
       "./node_modules/backbone"
     ]
   },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/vidoss/flux-backbone"
