@@ -47,11 +47,9 @@
                 _immutable = false;
                 try {
                     model.dispatchCallback.apply(model, arguments);
-                } catch (e) {
+                } finally {
                     _immutable = true;
-                    throw e;
                 }
-                _immutable = true;
             };
         }
 
@@ -83,15 +81,9 @@
                     this.setDispatcher(options.dispatcher);
                 }
                 Backbone.Model.apply(this, arguments);
-            } catch(e) {
-
-                if (!alreadyImmutable)
-                    _immutable = true;
-                throw e;
+            } finally {
+                _immutable = !alreadyImmutable;
             }
-
-            if (!alreadyImmutable)
-                _immutable = true;
 
         }
     });
@@ -113,11 +105,9 @@
                     this.setDispatcher(options.dispatcher);
                 }
                 Backbone.Collection.apply(this, arguments);
-            } catch(e) {
+            } finally {
                 _immutable = true;
-                throw e;
             }
-            _immutable = true;
 
         },
 
